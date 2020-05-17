@@ -1,0 +1,51 @@
+<strings>
+
+	<string id="AppName">Bike Simulator</string>
+    <string id="prompt">Bienvenue au\nBike Indoor Simulator</string>
+    <string id="pressStart">Presse Start</string>
+
+
+    <string id="tracksTitle">Etapes</string>
+
+	<string id="mainTitle">Bike Indoor Simulator</string>
+    <string id="config">Configuration</string>
+    <string id="tracks">Etapes</string>
+    <string id="start">Démarrer</string>
+    
+    
+    <string id="gears">Vitesse</string>
+    <string id="maxGear">Max Vit.</string>
+    <string id="power">Puissance</string>
+    <string id="powerLabel">Puiss.</string>
+    <string id="level">Niveau</string>
+    <string id="dist_rand_track">DistEtapeAléa</string>
+    <string id="maxgrade_rand_track">Max%EtapeAléa</string>
+    
+    <string id="distance">DISTANCE</string>
+    <string id="distanceLap">DISTANCE LAP</string>
+    <string id="heartRate">HR</string>
+    <string id="speed">  VIT.</string>
+    <string id="speedLap">VIT. LAP.</string>
+    <string id="cadence">CAD</string>
+    <string id="time">TEMPS</string>
+    <string id="timeLap">TEMPS LAP</string>
+    <string id="percentage">PENTE</string>
+    <string id="nextGrade">SUIV.</string>
+    <string id="avgSpeed">VIT. MOY.</string>
+    <string id="altitude">ALTITUDE</string>
+    <string id="powerLABEL">PUISSANCE</string>
+    <string id="avgPower">PUISS. MOY.</string>
+    
+    <string id="continu">Continuer</string>
+    <string id="save">Sauver</string>
+    <string id="discard">Supprimer</string>
+    
+    <string id="levelLabel">Niveau</string>
+	<string id="trackLabel">Etape</string>
+	
+	<string id="saving">Sauvegarde</string>
+	<string id="discarding">Suppression</string>
+	
+	<string id="trackCompleted">¡¡¡Etape\nTerminée!!!</string>
+    
+</strings>
