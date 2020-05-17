@@ -31,7 +31,7 @@ class DrawableDataFields extends WatchUi.Drawable {
         field1 = loadValue(options,:field1,:calculateSpeed);
         field2 = loadValue(options,:field2,:calculateHeartRate);
         field3 = loadValue(options,:field3,:calculateCadence);
-        field4 = loadValue(options,:field4, :calculateDistance);
+        field4 = loadValue(options,:field4,:calculateDistance);
         
         marginTitle = loadValue(options,:fieldTitleMargin, 0);
         marginNumber = loadValue(options,:fieldNumberMargin, 0);

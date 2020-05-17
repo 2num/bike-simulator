@@ -26,11 +26,15 @@ module DataTracks{
 	
 
 	function randomTrack(){
-		var kms = randomNumber(20,100);
+		var kms = Properties.dist_rand_track();
+		if (kms == 0){
+			kms = randomNumber(20,100);
+		}
 		var profile = new [kms];
 		var acc = 0;
 		for(var i = 0; i< profile.size(); i++){
-			var gradient = randomNumber(-8,8);
+			var maxgrade = Properties.maxgrade_rand_track() + 1;
+			var gradient = randomNumber(-maxgrade,maxgrade);
 			if((acc + gradient)< 0){
 				gradient = 0;
 			}
@@ -49,7 +53,7 @@ module DataTracks{
     	if(activeTrack == null){
     		var tracks = AllTracks();
     		var active = Properties.activeTrack();
-    		System.println("active:"+active);
+    		//System.println("active:"+active);
     		activeTrack = tracks[active];
     	}
     	return activeTrack;

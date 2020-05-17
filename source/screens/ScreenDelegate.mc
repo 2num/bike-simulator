@@ -1,11 +1,12 @@
 using Toybox.WatchUi;
 using SoundAndVibration as SV;
 using Activity;
-
+//using Toybox.System;
 
 class ScreenDelegate extends WatchUi.BehaviorDelegate {
 	
 	private const numSreens = 4;
+	private const periodFECSetting = 20000; // period in ms
 	
 	var index;
 	var record;
@@ -16,6 +17,9 @@ class ScreenDelegate extends WatchUi.BehaviorDelegate {
 	var stopTimer;
 	var completed = false;
 	
+	hidden var _FECMessages;
+	hidden var lasttime = 0;
+	
 	function initialize(index_, currentView_) {
         BehaviorDelegate.initialize();
         index = index_;
@@ -24,6 +28,10 @@ class ScreenDelegate extends WatchUi.BehaviorDelegate {
         
         activityRefreshTimer = new Timer.Timer();
         activityRefreshTimer.start(method(:refreshValues),1000,true);
+        
+		// Init FEC messages object
+		_FECMessages = new FECMessages();
+		_FECMessages.connectToDevice( 0 );
     }
     
     function refreshValues(){
@@ -38,13 +46,21 @@ class ScreenDelegate extends WatchUi.BehaviorDelegate {
 					record.handle();
 					WatchUi.pushView(new AlertTrackCompletedView(method(:pushStopMenu)), new AlertDelegate(), WatchUi.SLIDE_IMMEDIATE);
 				}
+				
+				// FEC setting
+				if ( _FECMessages.isConnected() ){
+					var currenttime = record.gettime(); // time in ms
+					if ( ((currenttime - lasttime) > periodFECSetting || (lasttime == 0) || isAlert) && record.isSessionStart() ){
+						_FECMessages.setGrade( record.grade );
+						//System.println( "FEC: get grade value from record: " + record.grade.toString() );
+						lasttime = currenttime;
+					}
+				}
 			}
-			
 			WatchUi.requestUpdate();
 		} catch (e instanceof Lang.Exception) {
 			WatchUi.requestUpdate();
 		}
-    	
 	}
     
     function onNextPage() {
@@ -101,6 +117,10 @@ class ScreenDelegate extends WatchUi.BehaviorDelegate {
 	function onBack() {
 		if(!record.isSessionStart()){
 			release();
+			// Disconnect FEC device if opened
+			if ( _FECMessages.isOpen() ){
+		  		_FECMessages.disconnect();
+		  	}
 			return false;
 		}
 		else if(record.isRecording()){
@@ -111,7 +131,6 @@ class ScreenDelegate extends WatchUi.BehaviorDelegate {
 			pushStopMenu();
     		return true;                  
     	}
-
     }
     
     function onMenu() {
@@ -135,16 +154,13 @@ class ScreenDelegate extends WatchUi.BehaviorDelegate {
     		return true;
     	}
     	return false;
-
     }
-    
     
     private function isZoom(){
     	if(currentView has :isZoom){
     		return currentView.isZoom();
     	}
     	return false;
-
     }
     
     private function hideSensors(){
@@ -195,8 +211,5 @@ class ScreenDelegate extends WatchUi.BehaviorDelegate {
 			activityRefreshTimer.stop();
 		}
 	}
-    
-    
-    
     
 }

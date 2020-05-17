@@ -7,6 +7,7 @@ module Activity{
 	var heartRateActive 	= false;
 	var bikeSpeedActive		= false;
 	var bikeCadenceActive 	= false;
+	var bikePowerActive 	= false;
 	
 	enum {
 		Started,
@@ -19,6 +20,8 @@ module Activity{
 	   	var trackField;
 	   	var percentageField;
 	   	var altitudeField;
+	   	
+	   	var grade = 0;
 	   	
 	   	var lapNumber = 0;
 	   	var stopTimer = null;
@@ -36,6 +39,7 @@ module Activity{
 	        		Sensor.SENSOR_HEARTRATE,
 	        		Sensor.SENSOR_BIKESPEED,
 	        		Sensor.SENSOR_BIKECADENCE,
+	        		Sensor.SENSOR_BIKEPOWER,
 	        	]);
 	        Sensor.enableSensorEvents(method(:onSensor));
 		}
@@ -44,6 +48,7 @@ module Activity{
 			heartRateActive = sensorInfo.heartRate!=null; 
 			bikeSpeedActive = sensorInfo.speed!=null;
 			bikeCadenceActive = sensorInfo.cadence!=null;
+			bikePowerActive = sensorInfo.power!=null;
 		}
 		
 		function handle(){
@@ -125,13 +130,21 @@ module Activity{
     	
     	function collectData(){
     		if(percentageField!=null){
-				percentageField.setData(ActivityValues.percentage());
+    			grade = ActivityValues.percentage(0);
+				percentageField.setData( grade );
 			}
 			if(altitudeField!=null){
 				altitudeField.setData(ActivityValues.calculateAltitude());
 			}
     	}
     	
+	    function gettime(){
+	    	var time = 0;
+	    	if(isSessionStart()){
+	    		time = ActivityValues.time();
+	    	}
+	    	return time;
+	    }
 	    
 		private function startingTimer(){
 		    session.start();

@@ -7,8 +7,6 @@ module ActivityValues {
 	var lastDistance = 0;
 	var lastTime = 0;
 
-
-	
 	function reset(){
 		lastDistance = 0;
 		lastTime = 0;
@@ -143,7 +141,7 @@ module ActivityValues {
     	var activityAvgSpeed = (3600*avgSpeed)/1000;
     	return Lang.format( "$1$",
     		[
-        		activityAvgSpeed.format("%02d")
+        		activityAvgSpeed.format("%02.1f")
     		]
 		);
     }
@@ -163,8 +161,35 @@ module ActivityValues {
     	}
     	return cadence.toString();
     }
-    function percentage(){
-    	var distance = calculateDistance().toNumber();
+    
+    function calculatePower(){
+    	var power = Activity.getActivityInfo().currentPower;
+    	if(power == null || power < 0) {
+    		if (power == null) {
+    			power = calculateSimulatorValues().power;
+			}
+			else{
+    			power = "";
+			}
+    	}
+    	return power.toString();
+    }
+
+    function calculateAvgPower(){
+    	var power = Activity.getActivityInfo().averagePower;
+    	if(power == null || power < 0) {
+    		if (power == null) {
+    			power = calculateSimulatorValues().power;
+			}
+			else{
+    			power = "";
+			}
+    	}
+    	return power.toString();
+    }
+       
+    function percentage(offset){
+    	var distance = calculateDistance().toNumber() + offset;
     	var profile = DataTracks.getActiveTrack().profile;
     	if(distance <=0 || distance>=profile.size()){
     		return 0;
@@ -195,11 +220,15 @@ module ActivityValues {
     	
     }
     function calculatePercentage(){
-    	return percentage().toString();
+    	return percentage(0).toString();
+    }
+
+    function calculateNextGrade(){
+    	return percentage(1).toString();
     }
     
     function calculateSimulatorValues(){
-	    return Simulator.calculate(percentage());
+	    return Simulator.calculate(percentage(0));
     }
     
     

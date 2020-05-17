@@ -3,14 +3,13 @@ using Toybox.Graphics;
 using ActivityValues;
 using Toybox.Lang;
 
-
 class DataFieldsView1 extends BaseView {
 
     	function onLayout(dc) {
     		BaseView.onLayout(dc);
     		setLayout(Rez.Layouts.DataFieldsView1(dc));
     	}
-    	
+
 }
 
 class DataFieldsView2 extends BaseView {

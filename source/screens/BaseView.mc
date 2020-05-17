@@ -10,6 +10,7 @@ class BaseView extends WatchUi.View {
 	private var heartIcon;
 	private var speedIcon;
 	private var cadenceIcon;
+	private var powerIcon;
 	
 	private var sensorTimer;
 	
@@ -31,6 +32,7 @@ class BaseView extends WatchUi.View {
 	    	heartIcon = WatchUi.loadResource(Rez.Drawables.HeartIcon);
 	    	speedIcon = WatchUi.loadResource(Rez.Drawables.SpeedIcon);
 	    	cadenceIcon = WatchUi.loadResource(Rez.Drawables.CadenceIcon);
+	    	powerIcon = WatchUi.loadResource(Rez.Drawables.PowerIcon);
     	
 	    	sensorTimer = new Timer.Timer();
 	        sensorTimer.start(method(:showSensors),2000,false); 
@@ -89,7 +91,7 @@ class BaseView extends WatchUi.View {
     
     private function drawSensorsInfo(dc){
     	var height = dc.getHeight()/3;
-    	var column = dc.getWidth()/4;
+    	var column = dc.getWidth()/5;
     	var marging = 35;
     	
     	dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
@@ -101,10 +103,13 @@ class BaseView extends WatchUi.View {
     		dc.drawBitmap(column -11 , height - marging, heartIcon);
     	}
     	if(blinking || Activity.bikeSpeedActive){
-    		dc.drawBitmap(column*2 - 11, height - marging, speedIcon);
+    		dc.drawBitmap(column*2 -11 , height - marging, speedIcon);
     	}
     	if(blinking || Activity.bikeCadenceActive){
     		dc.drawBitmap(column*3 -11 , height - marging, cadenceIcon);
+    	}
+    	if(blinking || Activity.bikePowerActive){
+    		dc.drawBitmap(column*4 -11 , height - marging, powerIcon);
     	}
     }
     

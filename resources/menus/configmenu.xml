@@ -2,4 +2,6 @@
     <menu-item id="gears" label="@Strings.gears" />
     <menu-item id="power" label="@Strings.power" />
     <menu-item id="level" label="@Strings.level" />
+    <menu-item id="dist_rand_track" label="@Strings.dist_rand_track" />
+    <menu-item id="maxgrade_rand_track" label="@Strings.maxgrade_rand_track" />
 </menu>

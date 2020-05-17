@@ -95,7 +95,7 @@ class DrawableTrackProfile extends WatchUi.Drawable {
 		var prevYPoint = null; 
 		var firstXPoint = null;
 		var firstYPoint = null; 
-		var kmMark = calculateKmMark(virtualdrawPoints.size()+1) ;
+		var kmMark = calculateKmMark(virtualdrawPoints.size()+1);
 		var lineWidth = 2;
 		for(var i = 0; i <= virtualdrawPoints.size(); ++i) {
 			var xPoint = x + (i * rate).toNumber() + lineWidth;
@@ -160,9 +160,17 @@ class DrawableTrackProfile extends WatchUi.Drawable {
 		if(zoom){
 			return 2;
 		}else{
-			return (size/4);
+			return max(size/4, 1);
 		}
 	}
+	
+    function max(val1, val2){
+		if(val1>val2){
+			return val1;
+		}else{
+			return val2;
+		}
+    }
 	
 	private function drawCursor(cursor,dc){
     	if(cursor!=null){

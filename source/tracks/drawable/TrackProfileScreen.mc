@@ -65,7 +65,7 @@ class TrackProfileScreen extends WatchUi.Drawable {
 				fontNumber, result.gear, Graphics.TEXT_JUSTIFY_LEFT );
 			
 			dc.setColor(Graphics.COLOR_WHITE, Graphics.Graphics.COLOR_TRANSPARENT);
-			dc.drawText(dc.getWidth()/2, dc.getHeight() - 15 , Graphics.FONT_TINY, ActivityValues.percentage() + "%", Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+			dc.drawText(dc.getWidth()/2, dc.getHeight() - 15 , Graphics.FONT_TINY, ActivityValues.percentage(0) + "%", Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 	
 		}
     }

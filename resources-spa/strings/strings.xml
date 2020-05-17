@@ -18,18 +18,23 @@
     <string id="power">Tamaño Potencia</string>
     <string id="powerLabel">Potencia</string>
     <string id="level">Nivel</string>
+    <string id="dist_rand_track">DistEtapaAlea</string>
+    <string id="maxgrade_rand_track">Max%EtapaAlea</string>
     
     <string id="distance">DISTANCIA</string>
     <string id="distanceLap">DIST. VUEL.</string>
     <string id="heartRate">FC</string>
     <string id="speed">VELOCIDAD</string>
     <string id="speedLap">VEL. VUEL.</string>
-    <string id="cadence">CADENCIA</string>
+    <string id="cadence">CAD</string>
     <string id="time">TIEMPO</string>
     <string id="timeLap">TPO VUEL.</string>
     <string id="percentage">PENDIENTE</string>
+    <string id="nextGrade">PROX</string>
     <string id="avgSpeed">VEL. MED.</string>
     <string id="altitude">ALTITUD V.</string>
+    <string id="powerLABEL">POTENCIA</string>
+    <string id="avgPower">POT. MED.</string>
     
     <string id="continu">Continuar</string>
     <string id="save">Guardar</string>
@@ -42,5 +47,5 @@
 	<string id="discarding">Descartando</string>
 	
 	<string id="trackCompleted">¡¡¡Etapa\nCompletada!!!</string>
-
+    
 </strings>

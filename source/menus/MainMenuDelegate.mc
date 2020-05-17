@@ -2,7 +2,7 @@ using Toybox.WatchUi;
 using Toybox.System;
 
 class MainMenuDelegate extends WatchUi.MenuInputDelegate {
-
+	
     function initialize() {
         MenuInputDelegate.initialize();
     }

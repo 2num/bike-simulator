@@ -17,28 +17,33 @@
     <string id="power">Power Size</string>
     <string id="powerLabel">Power</string>
     <string id="level">Level</string>
+    <string id="dist_rand_track">DistRandTrack</string>
+    <string id="maxgrade_rand_track">Max%RandTrack</string>
     
     <string id="distance">DISTANCE</string>
     <string id="distanceLap">LAP DIST. </string>
     <string id="heartRate">HR</string>
     <string id="speed">SPEED</string>
     <string id="speedLap">LAP SPEED</string>
-    <string id="cadence">CADENCE</string>
+    <string id="cadence">RPM</string>
     <string id="time">TIMER</string>
     <string id="timeLap">TIME LAP</string>
     <string id="percentage">GRADE</string>
+    <string id="nextGrade">NEXT</string>
     <string id="avgSpeed">AVG SPEED</string>
-    <string id="altitude">V. ELEVATION</string>
+    <string id="altitude">ALTITUDE</string>
+    <string id="powerLABEL">POWER</string>
+    <string id="avgPower">AVG POWER</string>
     
     <string id="continu">Continue</string>
-    <string id="save">Save</string>
+    <string id="save">Save</string> 
     <string id="discard">Discard</string>
     
 
-	<string id="levelLabel">Level</string>
+    <string id="levelLabel">Level</string>
+	<string id="trackLabel">Track</string>
 	<string id="emptyUnit"></string>
 	<string id="percentageUnit">%</string>
-	<string id="trackLabel">Track</string>
 	<string id="altitudeLabel">Virtual Altitude</string>
 	<string id="altitudeUnit">m</string>
 	

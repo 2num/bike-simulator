@@ -20,4 +20,7 @@
             <color>FFFFFF</color>
         </palette>
     </bitmap>
+    <bitmap id="PowerIcon" filename="images/power_icon.png">
+    	<palette disableTransparency="false">
+    		<color>FFFFFF</color></palette></bitmap>
 </resources>
