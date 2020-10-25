@@ -31,19 +31,18 @@ class AlertView extends WatchUi.View {
     // Update the view
     function onUpdate(dc) {
     	WatchUi.View.onUpdate(dc);
-    	var result = ActivityValues.calculateSimulatorValues();
     	var heightFont = Graphics.getFontHeight(Graphics.FONT_SYSTEM_MEDIUM);
 		var heightNumberFont = Graphics.getFontHeight(Graphics.FONT_NUMBER_MEDIUM);
     	dc.setColor(Graphics.COLOR_WHITE, Graphics.Graphics.COLOR_TRANSPARENT);
     	dc.drawText(dc.getWidth()/2, dc.getHeight()/8, Graphics.FONT_SYSTEM_MEDIUM,
-    		 WatchUi.loadResource(Rez.Strings.powerLabel).toUpper() + ":", Graphics.TEXT_JUSTIFY_CENTER);
+    		 WatchUi.loadResource(Rez.Strings.speed).toUpper() + ":", Graphics.TEXT_JUSTIFY_CENTER);
     	dc.drawText(dc.getWidth()/2, dc.getHeight()/8 + heightFont,
-    		 Graphics.FONT_NUMBER_MEDIUM, result.power, Graphics.TEXT_JUSTIFY_CENTER);
+    		 Graphics.FONT_NUMBER_MEDIUM, ActivityValues.calculateSpeed(), Graphics.TEXT_JUSTIFY_CENTER);
     		 
     	dc.drawText(dc.getWidth()/2, dc.getHeight()/8 + heightFont + heightNumberFont, Graphics.FONT_SYSTEM_MEDIUM, 
-    		WatchUi.loadResource(Rez.Strings.maxGear).toUpper() + ":", Graphics.TEXT_JUSTIFY_CENTER);
+    		WatchUi.loadResource(Rez.Strings.heartRate).toUpper() + ":", Graphics.TEXT_JUSTIFY_CENTER);
     	dc.drawText(dc.getWidth()/2, dc.getHeight()/8 + heightNumberFont + 2 * heightFont,
-    		 Graphics.FONT_NUMBER_MEDIUM, result.gear, Graphics.TEXT_JUSTIFY_CENTER);
+    		 Graphics.FONT_NUMBER_MEDIUM, ActivityValues.calculateHeartRate(), Graphics.TEXT_JUSTIFY_CENTER);
  
     }
     

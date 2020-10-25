@@ -4,7 +4,6 @@
     <string id="prompt">Bienvenido a\nSMART TRAINER BIS</string>
     <string id="pressStart">Pulsa Start</string>
 
-
     <string id="tracksTitle">Etapas</string>
 
 	<string id="mainTitle">SMART TRAINER BIS</string>
@@ -12,12 +11,7 @@
     <string id="tracks">Etapas</string>
     <string id="start">Empezar</string>
     
-    
-    <string id="gears">Marchas</string>
-    <string id="maxGear">Max Mar.</string>
-    <string id="power">Tamaño Potencia</string>
     <string id="powerLabel">Potencia</string>
-    <string id="level">Nivel</string>
     <string id="dist_rand_track">DistEtapaAlea</string>
     <string id="maxgrade_rand_track">Max%EtapaAlea</string>
     
@@ -40,7 +34,6 @@
     <string id="save">Guardar</string>
     <string id="discard">Descartar</string>
     
-    <string id="levelLabel">Nivel</string>
 	<string id="trackLabel">Etapa</string>
 	
 	<string id="saving">Guardando</string>

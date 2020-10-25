@@ -52,17 +52,16 @@ class TrackProfileScreen extends WatchUi.Drawable {
     	dc.drawLine(dc.getWidth()/2, 0, dc.getWidth()/2, base);
 		dc.setPenWidth(1);
 		dc.drawText(dc.getWidth()/2 - 10, base - Graphics.getFontHeight(fontField), 
-			fontField, WatchUi.loadResource(Rez.Strings.powerLabel).toUpper(), Graphics.TEXT_JUSTIFY_RIGHT);
+			fontField, WatchUi.loadResource(Rez.Strings.speed).toUpper(), Graphics.TEXT_JUSTIFY_RIGHT);
 		dc.drawText(dc.getWidth()/2 + 10, base - Graphics.getFontHeight(fontField), 
-			fontField, WatchUi.loadResource(Rez.Strings.maxGear).toUpper(), Graphics.TEXT_JUSTIFY_LEFT);
+			fontField, WatchUi.loadResource(Rez.Strings.heartRate).toUpper(), Graphics.TEXT_JUSTIFY_LEFT);
 			
 		if(ActivityValues.distance()>0){
-		    var result = ActivityValues.calculateSimulatorValues();
-		    
+
 		    dc.drawText(dc.getWidth()/2 - 10, base - Graphics.getFontHeight(fontField)  - Graphics.getFontHeight(fontNumber) - marginField/2, 
-				fontNumber, result.power, Graphics.TEXT_JUSTIFY_RIGHT);
+				fontNumber, ActivityValues.calculateSpeed(), Graphics.TEXT_JUSTIFY_RIGHT);
 			dc.drawText(dc.getWidth()/2 + 10, base - Graphics.getFontHeight(fontField)  - Graphics.getFontHeight(fontNumber) - marginField/2, 
-				fontNumber, result.gear, Graphics.TEXT_JUSTIFY_LEFT );
+				fontNumber, ActivityValues.calculateHeartRate(), Graphics.TEXT_JUSTIFY_LEFT );
 			
 			dc.setColor(Graphics.COLOR_WHITE, Graphics.Graphics.COLOR_TRANSPARENT);
 			dc.drawText(dc.getWidth()/2, dc.getHeight() - 15 , Graphics.FONT_TINY, ActivityValues.percentage(0) + "%", Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);

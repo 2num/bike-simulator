@@ -4,7 +4,6 @@
     <string id="prompt">Bienvenue au\nSMART TRAINER BIS</string>
     <string id="pressStart">Presse Start</string>
 
-
     <string id="tracksTitle">Etapes</string>
 
 	<string id="mainTitle">SMART TRAINER BIS</string>
@@ -12,12 +11,7 @@
     <string id="tracks">Etapes</string>
     <string id="start">Démarrer</string>
     
-    
-    <string id="gears">Vitesse</string>
-    <string id="maxGear">Max Vit.</string>
-    <string id="power">Puissance</string>
     <string id="powerLabel">Puiss.</string>
-    <string id="level">Niveau</string>
     <string id="dist_rand_track">DistEtapeAléa</string>
     <string id="maxgrade_rand_track">Max%EtapeAléa</string>
     
@@ -40,7 +34,6 @@
     <string id="save">Sauver</string>
     <string id="discard">Supprimer</string>
     
-    <string id="levelLabel">Niveau</string>
 	<string id="trackLabel">Etape</string>
 	
 	<string id="saving">Sauvegarde</string>

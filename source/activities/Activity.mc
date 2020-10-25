@@ -16,7 +16,6 @@ module Activity{
 	
 	class Record{
 		var session;
-		var levelField;
 	   	var trackField;
 	   	var percentageField;
 	   	var altitudeField;
@@ -27,10 +26,9 @@ module Activity{
 	   	var stopTimer = null;
 	   	var lastAltitude;
 	   	
-	   	private const LEVEL_FIELD_ID = 0;
-		private const TRACK_FIELD_ID = 1;
-		private const PERCENTAGE_FIELD_ID = 2;
-		private const ALTITUDE_FIELD_ID = 3;
+		private const TRACK_FIELD_ID = 0;
+		private const PERCENTAGE_FIELD_ID = 1;
+		private const ALTITUDE_FIELD_ID = 2;
 		private const ACTIVITY_NANE = "SMART TRAINER BIS";
 		
 		function initialize(){ 
@@ -58,9 +56,7 @@ module Activity{
 		                 :name		=> 	ACTIVITY_NANE,                              // set session name
 		                 :sport		=> 	ActivityRecording.SPORT_CYCLING,       // set sport type
 		                 :subSport	=>	ActivityRecording.SUB_SPORT_INDOOR_CYCLING // set sub sport type
-		           	});
-		    		levelField = session.createField("level",LEVEL_FIELD_ID,FitContributor.DATA_TYPE_STRING,
-		    				{ :mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"Level", :count=>2 });	
+		           	});	
 		       		trackField = session.createField("track",TRACK_FIELD_ID,FitContributor.DATA_TYPE_STRING, 
 		       				{ :mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"Track",:count=>32});
 		       		percentageField = session.createField("percentage",PERCENTAGE_FIELD_ID,FitContributor.DATA_TYPE_SINT32, 
@@ -104,8 +100,6 @@ module Activity{
 	    }
     
 	    function save(){
-			var level = Properties.level().format("%u");
-			levelField.setData(level);
 			trackField.setData(DataTracks.getActiveTrack().name);
 	    	var result = session.save();
 	    	session = null;

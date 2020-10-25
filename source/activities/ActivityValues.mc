@@ -165,12 +165,7 @@ module ActivityValues {
     function calculatePower(){
     	var power = Activity.getActivityInfo().currentPower;
     	if(power == null || power < 0) {
-    		if (power == null) {
-    			power = calculateSimulatorValues().power;
-			}
-			else{
-    			power = "";
-			}
+			power = "";
     	}
     	return power.toString();
     }
@@ -178,12 +173,7 @@ module ActivityValues {
     function calculateAvgPower(){
     	var power = Activity.getActivityInfo().averagePower;
     	if(power == null || power < 0) {
-    		if (power == null) {
-    			power = calculateSimulatorValues().power;
-			}
-			else{
-    			power = "";
-			}
+			power = "";
     	}
     	return power.toString();
     }
@@ -226,11 +216,6 @@ module ActivityValues {
     function calculateNextGrade(){
     	return percentage(1).toString();
     }
-    
-    function calculateSimulatorValues(){
-	    return Simulator.calculate(percentage(0));
-    }
-    
     
 }
 

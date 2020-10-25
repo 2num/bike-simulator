@@ -11,12 +11,7 @@
     <string id="tracks">Tracks</string>
     <string id="start">Start</string>
     
-    
-    <string id="gears">Gears</string>
-    <string id="maxGear">Max Gear</string>
-    <string id="power">Power Size</string>
     <string id="powerLabel">Power</string>
-    <string id="level">Level</string>
     <string id="dist_rand_track">DistRandTrack</string>
     <string id="maxgrade_rand_track">Max%RandTrack</string>
     
@@ -39,8 +34,6 @@
     <string id="save">Save</string> 
     <string id="discard">Discard</string>
     
-
-    <string id="levelLabel">Level</string>
 	<string id="trackLabel">Track</string>
 	<string id="emptyUnit"></string>
 	<string id="percentageUnit">%</string>
