@@ -60,7 +60,8 @@ class DrawableDataExtFields extends WatchUi.Drawable {
 		dc.clear();
 
 		drawGrid(dc,width,height);
-		drawProgressBar(dc,getFill(),width,height);
+		drawProgressBar(dc,getFill(),width,height,Graphics.COLOR_RED);
+		drawProgressBar(dc,getWholeFill(),width,2*height,Graphics.COLOR_BLUE);
 		
 		drawField(dc,title1,field1,width/2+width/10   ,0 ,width-width/10 , height, true);// left top
 		drawField(dc,title6,field6,1.5*width-width/15 ,0 ,width+width/15 , height, true);// right top
@@ -95,8 +96,8 @@ class DrawableDataExtFields extends WatchUi.Drawable {
 		dc.drawText(x + width/2, y + offsetNum, numberFont, v.invoke(), Graphics.TEXT_JUSTIFY_CENTER);
 	}
 	
-	private function drawProgressBar(dc,fill,width,height) {
-		dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_BLACK);
+	private function drawProgressBar(dc,fill,width,height,color) {
+		dc.setColor(color, Graphics.COLOR_BLACK);
 		dc.setPenWidth(6);
 		dc.drawLine(0, height, 3 * width * fill, height);
 		dc.setPenWidth(1);
@@ -105,6 +106,16 @@ class DrawableDataExtFields extends WatchUi.Drawable {
 	function getFill(){
 		var distance = ActivityValues.distance();
 		var fill = distance - distance.toNumber();
+		return fill;
+	}
+	
+	function getWholeFill(){
+		var distance = ActivityValues.distance();
+		var totalDistance = DataTracks.getActiveTrack().profile.size();
+		var fill = 0;
+		if ( totalDistance != 0 ) {
+			fill = distance/totalDistance;
+		}
 		return fill;
 	}
 }
