@@ -1,13 +1,13 @@
 <strings>
 
-	<string id="AppName">Bike Simulator</string>
-    <string id="prompt">Bienvenue au\nBike Indoor Simulator</string>
+	<string id="AppName">SmartTrainerBis</string>
+    <string id="prompt">Bienvenue au\nSMART TRAINER BIS</string>
     <string id="pressStart">Presse Start</string>
 
 
     <string id="tracksTitle">Etapes</string>
 
-	<string id="mainTitle">Bike Indoor Simulator</string>
+	<string id="mainTitle">SMART TRAINER BIS</string>
     <string id="config">Configuration</string>
     <string id="tracks">Etapes</string>
     <string id="start">Démarrer</string>

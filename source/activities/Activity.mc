@@ -31,7 +31,7 @@ module Activity{
 		private const TRACK_FIELD_ID = 1;
 		private const PERCENTAGE_FIELD_ID = 2;
 		private const ALTITUDE_FIELD_ID = 3;
-		private const ACTIVITY_NANE = "Bike Indoor Simulator";
+		private const ACTIVITY_NANE = "SMART TRAINER BIS";
 		
 		function initialize(){ 
 			Sensor.setEnabledSensors(
